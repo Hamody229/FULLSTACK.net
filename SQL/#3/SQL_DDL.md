@@ -107,3 +107,44 @@ CREATE TABLE Employees (
 
 ---
 
+The **`ALTER`** command in SQL is part of DDL.
+It’s used to **modify the structure of an existing table** (not the data).
+
+### Common uses of `ALTER`:
+
+1. **Add a new column**
+
+   ```sql
+   ALTER TABLE Students ADD Email VARCHAR(100);
+   ```
+
+2. **Modify a column’s datatype/size**
+
+   ```sql
+   ALTER TABLE Students MODIFY Age SMALLINT;
+   ```
+
+3. **Rename a column** (syntax depends on the SQL dialect)
+
+   ```sql
+   -- MySQL
+   ALTER TABLE Students RENAME COLUMN Name TO FullName;
+
+   -- SQL Server
+   EXEC sp_rename 'Students.Name', 'FullName', 'COLUMN';
+   ```
+
+4. **Drop (delete) a column**
+
+   ```sql
+   ALTER TABLE Students DROP COLUMN Email;
+   ```
+
+5. **Rename the table itself**
+
+   ```sql
+   ALTER TABLE Students RENAME TO Learners;
+   ```
+
+
+
